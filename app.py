@@ -196,7 +196,7 @@ def llm_extraction(report_text: str) -> dict | None:
     """Use OpenAI LLM to extract TNM staging."""
     #base_url = os.environ.get("AI_INTEGRATIONS_OPENAI_BASE_URL")
     #api_key = os.environ.get("AI_INTEGRATIONS_OPENAI_API_KEY")
-    api_key = "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"
+    api_key = "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"
 
     #if not base_url or not api_key:
     #    return None
