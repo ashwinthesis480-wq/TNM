@@ -202,7 +202,9 @@ def llm_extraction(report_text: str) -> dict | None:
     #    return None
 
     try:
-        client = OpenAI(api_key="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")#, base_url=base_url)
+        #client = OpenAI(api_key="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")#, base_url=base_url)
+        api_key = st.secrets["OPENAI_API_KEY"]
+        client = OpenAI(api_key=api_key)
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             max_completion_tokens=1024,
