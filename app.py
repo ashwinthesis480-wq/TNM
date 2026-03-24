@@ -6,7 +6,6 @@ import io
 import os
 from openai import OpenAI
 
-client = OpenAI(api_key="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")
 # ─────────────────────────────────────────────
 # Rule-Based TNM Extractor
 # ─────────────────────────────────────────────
@@ -195,14 +194,15 @@ Return ONLY valid JSON with no markdown formatting:
 
 def llm_extraction(report_text: str) -> dict | None:
     """Use OpenAI LLM to extract TNM staging."""
-    base_url = os.environ.get("AI_INTEGRATIONS_OPENAI_BASE_URL")
-    api_key = os.environ.get("AI_INTEGRATIONS_OPENAI_API_KEY")
+    #base_url = os.environ.get("AI_INTEGRATIONS_OPENAI_BASE_URL")
+    #api_key = os.environ.get("AI_INTEGRATIONS_OPENAI_API_KEY")
+    api_key = "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"
 
-    if not base_url or not api_key:
-        return None
+    #if not base_url or not api_key:
+    #    return None
 
     try:
-        client = OpenAI(api_key=api_key, base_url=base_url)
+        client = OpenAI(api_key=api_key)#, base_url=base_url)
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             max_completion_tokens=1024,
