@@ -6,7 +6,7 @@ import io
 import os
 from openai import OpenAI
 
-
+client = OpenAI(api_key="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")
 # ─────────────────────────────────────────────
 # Rule-Based TNM Extractor
 # ─────────────────────────────────────────────
